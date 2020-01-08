@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
-import Carte from './Components/Carte.jsx'
+import Carte from './Components/Carte.jsx';
+// import 'tachyons';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -9,9 +11,7 @@ class App extends React.Component {
       items: []
     };
   }
-  ComponentDidMount(){
-    console.log("hello")
-  }
+
   render() {
     return (
       <div>

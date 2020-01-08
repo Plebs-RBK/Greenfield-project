@@ -6,11 +6,22 @@ import Carte from './Carte.jsx'
 class Info extends React.Component {
   constructor(props) {
     super(props)
-
+    this.state={
+      info:this.props.data[0],
+      counter : 1
+    }
 
   }
-  switchVue(){
-
+  componentWillMount(){
+    setInterval(()=>{
+      if(this.state.counter === 3){
+        this.setState({counter : 0})
+      }
+      this.setState({
+        info : this.props.data[this.state.counter],
+        counter : this.state.counter += 1
+      })
+    },5000)
   }
 
   render(){
@@ -18,9 +29,9 @@ class Info extends React.Component {
 
       <div>
 
-        <h1>{this.props.data[0].username}</h1>
-        <h1>{this.props.data[0].region}</h1>
-        <h1>{this.props.data[0].price} DT</h1>
+        <h1>{this.state.info.username}</h1>
+        <h1>{this.state.info.region}</h1>
+        <h1>{this.state.info.price} DT</h1>
 
         {/* {console.log(this.props.data)}
         {
