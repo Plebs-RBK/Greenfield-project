@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
+import Search from './Search.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Item List</h1>
+        <Search />
       </div>
     );
   }
