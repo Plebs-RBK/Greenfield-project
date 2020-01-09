@@ -29,9 +29,9 @@ class Info extends React.Component {
 
       <div>
 
-        <h1>{this.state.info.username}</h1>
-        <h1>{this.state.info.region}</h1>
-        <h1>{this.state.info.price} DT</h1>
+        <h3>{this.state.info.username}</h3>
+        <h3>{this.state.info.region}</h3>
+        <h3>{this.state.info.price} DT</h3>
 
         {/* {console.log(this.props.data)}
         {

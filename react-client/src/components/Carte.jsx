@@ -43,7 +43,7 @@ class Carte extends React.Component {
        <div>
          {
            Object.keys(this.state.data).map((elm,i) => (
-             <div key = {i}>
+             <div key = {i} className='bg-light-blue dib br3 pa3 ma2 grow bw2 shadow-5 vh-30 mw5-m' style = {{width:'200px'}} >
   <h1>{elm}</h1>
              <Info data={this.state.data[elm]}/>
              </div>

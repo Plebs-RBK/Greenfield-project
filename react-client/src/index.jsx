@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
 import Carte from './Components/Carte.jsx';
-// import 'tachyons';
+
 
 class App extends React.Component {
   constructor(props) {
