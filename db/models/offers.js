@@ -13,3 +13,10 @@ const offreSchema = mongoose.Schema({
 });
 
 let Offre = mongoose.model("Offre", offreSchema);
+
+const addToDb = obj =>{
+  let offre = new Offre(obj)
+  return offre.save(obj)
+}
+
+module.exports.addToDb = addToDb;
