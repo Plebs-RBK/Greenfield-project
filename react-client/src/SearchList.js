@@ -4,7 +4,7 @@ import Teacher from './Teacher.js';
 //returns a boolean output (if query matches name OR do nothing if no query)
 function searchFilter(searchQuery) {
 	return function(a) {
-		return a.name.toLowerCase().includes(searchQuery.toLowerCase()) || !searchQuery;
+		return a.region.toLowerCase().includes(searchQuery.toLowerCase()) || !searchQuery;
 	}
 }
 class SearchList extends Component {
@@ -33,6 +33,7 @@ class SearchList extends Component {
             	<Teacher 
             	id={teacher.id}
             	name={teacher.name}
+            	region={teacher.region}
             	category={teacher.catergory}
             	email={teacher.email}
             	/>
