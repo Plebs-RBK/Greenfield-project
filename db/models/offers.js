@@ -11,5 +11,11 @@ const offreSchema = mongoose.Schema({
   },
   description: String
 });
-
 let Offre = mongoose.model("Offre", offreSchema);
+
+
+const findOffer = (categorie) => {
+
+  return Offre.find({categorie}).limit(3).sort({views: -1});
+}
+module.exports.findOffer = findOffer;
