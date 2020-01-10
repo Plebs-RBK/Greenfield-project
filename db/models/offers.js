@@ -4,14 +4,18 @@ const offreSchema = mongoose.Schema({
   firstName: String,
   lastName: String,
   categorie: String,
-  price: Number,
+  price: String,
   region: String,
   views: {
-    type: Number,
+    type: String,
     default: 0
   },
   phone: String,
-  description: String
+  description: String,
+  rating:{
+    type: Number,
+    default: 0
+  }
 });
 
 let Offre = mongoose.model("Offre", offreSchema);
@@ -34,8 +38,12 @@ const addToDb = obj => {
   let offre = new Offre(obj);
   return offre.save(obj);
 };
+const updateDb = (id,rating) => {
+  return Offre.findOneAndUpdate({_id : id},{rating},{useFindAndModify : false})
+}
 
 module.exports.addToDb = addToDb;
 module.exports.findOffer = findOffer;
 module.exports.findAll = findAll;
 module.exports.findOne = findOne;
+module.exports.updateDb = updateDb;
