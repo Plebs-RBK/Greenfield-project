@@ -9,7 +9,11 @@ const offreSchema = mongoose.Schema({
     type: Number,
     default: 0
   },
-  description: String
+  description: String,
+  rating:{
+    type: Number,
+    default: 0
+  }
 });
 let Offre = mongoose.model("Offre", offreSchema);
 
