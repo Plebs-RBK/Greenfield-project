@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import $ from "jquery";
 import Carte from './Carte.jsx'
+import Rating from './Rating.jsx'
 
 class Info extends React.Component {
   constructor(props) {
@@ -28,21 +29,10 @@ class Info extends React.Component {
     return (
 
       <div>
-
-        <h3>{this.state.info.username}</h3>
+        <h3>{this.state.info.firstName} {this.state.info.lastName}</h3>
         <h3>{this.state.info.region}</h3>
         <h3>{this.state.info.price} DT</h3>
-
-        {/* {console.log(this.props.data)}
-        {
-          this.props.data.map(element => {
-            <div id={element.categorie}>
-              <div><h3>Name:</h3>{element.username}</div>
-              <div><h3>Region:</h3>{element.region}</div>
-              <div><h3>Price:</h3>{element.price}</div>
-            </div>
-          })
-        } */}
+        <Rating />
       </div>
     )
   }
