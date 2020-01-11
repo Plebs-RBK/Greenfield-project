@@ -1,6 +1,6 @@
 import React from "react";
 import $ from "jquery";
-import Rating from './Rating.jsx'
+import Ratings from './Rating.jsx'
 import NavBar from '../nav.jsx';
 
 class Announce extends React.Component {
@@ -13,7 +13,11 @@ class Announce extends React.Component {
 
   componentWillMount() {
     let id = window.location.pathname.split('/')[1]
-    $.get(`/announce/${id}`)
+    $.ajax({
+      url: '/update/views',
+      method: 'PATCH',
+      data: { id }
+    })
       .then(res => this.setState({ info: res }))
   }
 
@@ -26,7 +30,8 @@ class Announce extends React.Component {
         <h3>{this.state.info.region}</h3>
         <h3>{this.state.info.description}</h3>
         <h3>{this.state.info.price} DT</h3>
-        <Rating />
+        <h3>{this.state.info.rating} Stars</h3>
+        <Ratings data={this.state.info} />
       </div>
     )
   }
