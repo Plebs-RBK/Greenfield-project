@@ -35,9 +35,9 @@ class Login extends React.Component {
 
       <div >
         <NavBar />
-        <div className="cover bg-center w-100 vh-75 dt" style={{
+        <div className="cover bg-center w-100 vh-100 dt" style={{
           backgroundImage: `url(https://i.ibb.co/55dn7rm/students-background.jpg)`,
-          position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -7.5%)'
+          position: 'fixed', top: '20%', right: '50%', transform: 'translate(50%, -7.5%)'
         }} >
 
       <main className="pa4 white" style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1' }}>

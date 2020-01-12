@@ -50,13 +50,16 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div>
+      <div >
         <NavBar />
-        <div className="cover bg-center w-100 vh-75 dt" style={{
-          backgroundImage: `url(https://i.ibb.co/12XgC4c/download.jpg)`, opacity: '0.8',
-          position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -7.5%)'
+
+        <div className=" cover bg-center w-100 vh-100 dt" style={{
+          backgroundImage: `url(https://i.ibb.co/55dn7rm/students-background.jpg)`,
+          position: 'fixed', top: '20%', right: '50%', transform: 'translate(50%, -7.5%)'
         }}>
-          <main className="pa4 white" style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1' }}>
+        </div>
+
+          <main className="pa4 white" style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -7.5%)' }}>
           <div className='ba bw1 b--white pa4 vh-60 br3' style={{ backgroundColor: 'rgba(0,0,0, 0.1)' }}>
             <form className="measure center">
               <fieldset
@@ -168,7 +171,6 @@ class SignUp extends React.Component {
             </form>
             </div>
           </main>
-        </div>
       </div>
     );
   }
