@@ -35,7 +35,7 @@ class Carte extends React.Component {
   render() {
     return (
       <div>
-        <div className="f4 f3-m f2-l tc fw2  black-50 ma4">Featured Teachers</div>
+        <div className="f1 tc fw2  black-60 ma4">Featured Teachers</div>
         <hr className="measure-wide center" />
         <section className="cf pt4 pb2 mw8 center">
           {

@@ -33,15 +33,6 @@ class Info extends React.Component {
     return <Redirect to={`/${this.state.info._id}`} />
   }
 
-  // star() {
-  //   let parent = []
-  //           let children = []
-  //         for(let i = 0; i < this.state.info.rating; i++) {
-  //           children.push()
-  //           return <span className="fa fa-star checked" style={{color: 'orange'}}></span>
-  //           console.log('stars')
-  //         }
-  // }
 
   render() {
     const elem = Math.floor(this.state.info.rating);

@@ -36,10 +36,8 @@ class Announce extends React.Component {
 
     return (
       <div>
-        <NavBar />
-          <div className=''>
-          <main className=" list pl0 mt0  center pa4 " style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -7.5%)' }}>
-            <div className="flex justify-center lh-copy pa3 ph0-l ba b--black-10 pa3 w-100">
+          <NavBar />
+            <div className="flex items-center lh-copy pa3 ph0-l bb b--black-10">
             <div className='br b--black-50'>
             <img
             className="w2 h2 w4-ns h4-ns br2"
@@ -61,7 +59,6 @@ class Announce extends React.Component {
                 {this.state.info.description}
               </span>
             </div>
-
             <div className='fr'>
             <h3>
             {this.state.info.price} DT
@@ -71,10 +68,12 @@ class Announce extends React.Component {
             <Ratings data={this.state.info} />
             </div>
             </div>           
-            </main>
-        </div>
       </div>
     )
   }
 }
 export default Announce;
+
+
+
+

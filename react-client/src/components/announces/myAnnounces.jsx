@@ -47,9 +47,11 @@ class MyAnnounces extends React.Component {
   }
   render() {
     return (
-      <div>
+
+      <div className="list pl0 mt0 measure" >
+
+
         <h1>My Announces</h1>
-        {/* <NavBar /> */}
         {this.state.data.map(elm => (
           <div key={elm._id} >
             <Announces announce={elm} />
@@ -57,6 +59,7 @@ class MyAnnounces extends React.Component {
           </div>
         ))}
         {this.state.fail && this.renderMsg()}
+
       </div>
     )
   }

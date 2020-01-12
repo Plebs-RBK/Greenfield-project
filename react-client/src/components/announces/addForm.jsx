@@ -69,7 +69,7 @@ class Form extends React.Component {
         </div>
 
           <main className="pa4 white w-40" style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -7.5%)' }}>
-          <div className='ba bw1 b--white pa4 vh-60 br3' style={{ backgroundColor: 'rgba(0,0,0, 0.1)' }}>
+          <div className='ba bw1 b--white pa4 vh-60 br3' style={{ backgroundColor: 'rgba(45,107,158, 0.8)' }}>
             <form className="measure center">
               <fieldset
                 id="sign_up"
@@ -154,12 +154,12 @@ class Form extends React.Component {
               </fieldset>
               <div className="dtc v-mid">
                 <input
-                  className="dib v-mid b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f6 dib white "
+                  className="br3 dib v-mid b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f6 dib white "
                   type="submit"
                   value="Submit"
                   onClick={this.onSubmit}
                 />
-                <h4 className="error tc red pa1" style={{ display: "none" }}></h4>
+                <h4 className="error tc orange ph5" style={{ display: "none" }}></h4>
               </div>
             </form>
               {this.state.done && <Redirect to="/" />}
