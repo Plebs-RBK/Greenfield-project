@@ -87,7 +87,7 @@ class Login extends React.Component {
               </fieldset>
               <div className="dtc v-mid">
                 <input
-                  className="dib v-mid b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f6 dib white "
+                  className="br3 dib v-mid b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f5 dib white "
                   type="submit"
                   value="Login"
                   onClick={this.sendInfo}
