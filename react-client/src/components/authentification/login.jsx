@@ -40,7 +40,7 @@ class Login extends React.Component {
           position: 'fixed', top: '20%', right: '50%', transform: 'translate(50%, -7.5%)'
         }} >
 
-      <main className="pa4 white" style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1' }}>
+      <main className="pa4 white w-40" style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1' }}>
 
         <div className='ba bw1 b--white pa4 vh-50 br3 shadow-1' style={{ backgroundColor: 'rgba(0,0,0, 0.1)' }}>
             <form className="measure center">

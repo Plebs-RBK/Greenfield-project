@@ -43,20 +43,38 @@ class SearchList extends Component {
   render() {
     const { teachers, searchQuery, categorie } = this.state;
     return (
-      <div>
+    <div>
         <NavBar />
-
+      <main className="pa4 white center " style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1'}}>
         <input type="text" name="searchQuery" onChange={this.inputHandler} value={searchQuery} placeholder="Search by region" /><br />
         <input type="tesxt" name="categorie" onChange={this.inputHandler} value={categorie} placeholder="Search by categorie" />
         <button type='submit' onClick={this.onSubmit}>Search</button>
 
-        {teachers.filter(searchFilter(searchQuery)).map(elm => (
-          <div key={elm._id}>
-            <Teacher data={elm} />
-          </div>
-        ))}
-      </div >
+
+<section className="cf pt4 pb2 mw8 center">
+          {
+            teachers.filter(searchFilter(searchQuery)).map(elm => (
+              <div key={elm._id} >
+                  <Teacher data={elm} />
+              </div>
+            ))}
+        </section>
+      </main>
+    </div>
     );
   }
 }
 export default SearchList;
+
+
+
+{/*<article>
+<h2 className="f3 fw4 pa3 mv0">
+Albums
+</h2>
+<div className="cf pa2">
+
+  
+
+</div>
+</article>*/}
