@@ -45,17 +45,21 @@ class Info extends React.Component {
 
   render() {
     const elem = Math.floor(this.state.info.rating);
-    const stars = []
-    for (let i =0; i < elem; i++) { stars.push(<span key={i} className="fa fa-star checked" style={{color: 'orange'}}></span>) }
+    const stars = [];
+    let count = 0;
+      for (let i =0; i < 5; i++) { 
+        if (count !== elem) {
+          stars.push(<span key={i} className="fa fa-star checked" style={{color: 'gold'}}></span>); 
+          count++;
+        }else {
+          stars.push(<span className="fa fa-star" style={{color: 'lightGray'}}></span>)
+        } 
+      }
     return (
       <div onClick={this.sendID}>
         <h3>{this.state.info.firstName} {this.state.info.lastName}</h3>
         <h3>{this.state.info.region}</h3>
-        <h3>{this.star}</h3>
- 
           {stars}
-      
-{/*        <h3>{this.state.info.rating} Stars</h3>*/}
         {this.state.clicked && this.RenderTheComponant()}
       </div>
     )

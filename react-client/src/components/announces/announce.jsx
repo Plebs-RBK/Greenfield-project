@@ -23,36 +23,46 @@ class Announce extends React.Component {
 
   render() {
     const elem = Math.floor(this.state.info.rating);
-    const stars = []
-    for (let i =0; i < elem; i++) { stars.push(<span key={i} className="fa fa-star checked" style={{color: 'orange'}}></span>) }
+    const stars = [];
+    let count = 0;
+      for (let i =0; i < 5; i++) { 
+        if (count !== elem) {
+          stars.push(<span key={i} className="fa fa-star checked" style={{color: 'gold'}}></span>); 
+          count++;
+        }else {
+          stars.push(<span className="fa fa-star" style={{color: 'lightGray'}}></span>)
+        } 
+      }
 
     return (
       <div>
         <NavBar />
           <div className=''>
-          <main className=" list pl0 mt0 measure center pa4 " style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -7.5%)' }}>
-            <div className="flex justify-center lh-copy pa3 ph0-l ba b--black-10 pa3">
+          <main className=" list pl0 mt0  center pa4 " style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -7.5%)' }}>
+            <div className="flex justify-center lh-copy pa3 ph0-l ba b--black-10 pa3 w-100">
+            <div className='br b--black-50'>
             <img
             className="w2 h2 w4-ns h4-ns br2"
             src="http://tachyons.io/img/avatar-jasonli.jpg"
             />
-
-            <div className="pl3 flex-auto ph5">
-              <span className="f3 db black-70">
+            <span className="f2 db black-70 pa2">
+              {this.state.info.firstName} {this.state.info.lastName}
+            </span>
+            </div>
+            <div className=" pl3 center ph5 ">
+              <span className="f1 db black-70 pa2">
                 {this.state.info.categorie}
               </span>
-              <span className="f6 db black-70">
-                {this.state.info.firstName} {this.state.info.lastName}
-              </span>
-              <span className='f6 db black-70'>
+
+              <span className='f4 db black-70 pa2'>
                 {this.state.info.region}
               </span>
-              <span className='f6 db black-70'>
+              <span className='f5 db black-70 pa2'>
                 {this.state.info.description}
               </span>
             </div>
 
-            <div>
+            <div className='fr'>
             <h3>
             {this.state.info.price} DT
             </h3>
