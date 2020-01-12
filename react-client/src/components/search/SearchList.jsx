@@ -45,13 +45,24 @@ class SearchList extends Component {
     return (
     <div>
         <NavBar />
-      <main className="pa4 white center " style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1'}}>
-        <input type="text" name="searchQuery" onChange={this.inputHandler} value={searchQuery} placeholder="Search by region" /><br />
-        <input type="tesxt" name="categorie" onChange={this.inputHandler} value={categorie} placeholder="Search by categorie" />
-        <button type='submit' onClick={this.onSubmit}>Search</button>
+         <div className="cover bg-center w-100 vh-50 dt" style={{ backgroundImage: `url(https://i.ibb.co/3ssFkBX/OO0122373-Blue-abstract-background-design-copy-copy.jpg)`}}>
+      <main className="pa4 white center" style={{ position: 'absolute', top: '25%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1' }}>
+            
+            <div className="dtc v-mid">
+              <div className="tc ph3">
 
-
-<section className="cf pt4 pb2 mw8 center">
+                <div id="form" className='tc'>
+                  <div className='ListSearch'>
+                    <input className="tc br3 f9 black ba b--white grow v-mid dib no-underline ph5 pv3 mb3 bg-white-80 w-100" type="text" name="searchQuery" onChange={this.inputHandler} value={searchQuery} placeholder="Search by region..." /><br />
+                    <input className="tc br3 f9 black ba b--white grow v-mid dib no-underline ph5 pv3 mb3 bg-white-80 w-100" type="tesxt" name="categorie" onChange={this.inputHandler} value={categorie} placeholder="Search by category..." />
+                  </div>
+                  {/*<button className="f6 no-underline grow dib v-mid white ba b--white ph3 pv2 mb3" type='submit' onClick={this.onSubmit}>Search</button>*/}
+                  <a className="f9 br3 no-underline grow dib v-mid white ba b--white ph3 pv2 mb3 hover-white" href="#" onClick={this.onSubmit} >Search</a>
+                  
+                </div>
+              </div>
+            </div>
+            <section className="" style={{ position: 'absolute', top: '110%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1' }}>
           {
             teachers.filter(searchFilter(searchQuery)).map(elm => (
               <div key={elm._id} >
@@ -59,12 +70,14 @@ class SearchList extends Component {
               </div>
             ))}
         </section>
-      </main>
+        </main>
+          </div>
     </div>
     );
   }
 }
 export default SearchList;
+
 
 
 
