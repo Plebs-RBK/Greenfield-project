@@ -62,13 +62,18 @@ class SearchList extends Component {
                 </div>
               </div>
             </div>
-            <section className="" style={{ position: 'absolute', top: '110%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1' }}>
+            <section className="" style={{ position: 'absolute', top: '120%', right: '50%', transform: 'translate(50%, -25%)', opacity: '1' }}>
+          <div>
+        <section className="cf pt4 pb2 mw8 black">
           {
-            teachers.filter(searchFilter(searchQuery)).map(elm => (
+             teachers.filter(searchFilter(searchQuery)).map((elm, i) => (
               <div key={elm._id} >
                   <Teacher data={elm} />
               </div>
-            ))}
+            ))
+          }
+        </section>
+      </div>
         </section>
         </main>
           </div>
@@ -77,9 +82,8 @@ class SearchList extends Component {
   }
 }
 export default SearchList;
-
-
-
+ 
+ 
 
 {/*<article>
 <h2 className="f3 fw4 pa3 mv0">

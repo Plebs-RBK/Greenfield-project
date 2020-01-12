@@ -33,7 +33,7 @@ class MyAnnounces extends React.Component {
   }
   renderMsg() {
     return (
-      <div>
+      <div className='tc'>
         <h1>You need to be connected to look at your announces</h1>
         <div>
           <a href="/login">Login</a>
@@ -61,5 +61,6 @@ class MyAnnounces extends React.Component {
     )
   }
 }
+
 
 export default MyAnnounces;
