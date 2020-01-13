@@ -2,11 +2,14 @@ import React from "react";
 import $ from "jquery";
 import NavBar from '../nav.jsx';
 
+//this component represents the signup page
+
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       logged: false,
+      //this elements represents the informations that should be typed by the user
       firstName: "",
       lastName: "",
       email: "",
@@ -16,10 +19,12 @@ class SignUp extends React.Component {
     this.saveValue = this.saveValue.bind(this)
     this.sendInfo = this.sendInfo.bind(this);
   }
+  //this function save the data in the state with the onChange
   saveValue(e) {
     document.querySelector('.error').style.display = "none";
     this.setState({ [e.target.name]: e.target.value })
   }
+  //this function aalows us to send a post request to the api after handling the errors
   sendInfo(e) {
     e.preventDefault();
     if (this.state.firstName === "") {

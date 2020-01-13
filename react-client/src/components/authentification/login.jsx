@@ -2,20 +2,26 @@ import React from "react";
 import $ from "jquery";
 import NavBar from '../nav.jsx';
 
+//this component represents our login page
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      //this element represents the email typed by the user
       email: "",
+      //this element represents the password typed by the user
       password: "",
     }
     this.saveValue = this.saveValue.bind(this)
     this.sendInfo = this.sendInfo.bind(this);
   }
+  //this function save the data in the state with the onChange
   saveValue(e) {
     document.querySelector('.error').style.display = "none";
     this.setState({ [e.target.name]: e.target.value })
   }
+  //this function allows us to send a post request to the api
   sendInfo(e) {
     $.post('/auth/login', this.state)
       .then(result => {
