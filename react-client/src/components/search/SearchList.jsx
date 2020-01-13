@@ -20,13 +20,20 @@ class SearchList extends Component {
       fail: false,
       searchQuery: ""
     };
+    //Binding helper functions to this component
     this.inputHandler = this.inputHandler.bind(this);
     this.onSubmit = this.onSubmit.bind(this)
   }
+  
+  //==========Helper-functions==========\\
+  
+    //On mount invokes getAnnouces() function
   async componentDidMount() {
     let categorie = window.query || 'no';
     await this.getAnnounces(categorie)
   }
+  
+  //Request-Handler, requests annouces by categories and populates teachers with the response
   getAnnounces(categorie) {
     $.get(`/announces/${categorie}`).then(res => {
       if (res.length) {
@@ -36,12 +43,16 @@ class SearchList extends Component {
       }
     });
   }
+  
+  //Grabs the annouces' value from the Request-Handler and resets categorie on submitting
   async onSubmit(event) {
     event.preventDefault();
     let categorie = this.state.categorie || 'no';
     await this.getAnnounces(categorie)
     this.setState({ categorie: '' })
   }
+  
+ //Handles the input values 
   inputHandler(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
