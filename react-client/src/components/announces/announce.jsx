@@ -3,14 +3,15 @@ import $ from "jquery";
 import Ratings from './Rating.jsx'
 import NavBar from '../nav.jsx';
 
+//this component is responsible for updating the views for the announce
 class Announce extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      info: {},
+      info: {}, // helps us retrieve multiple data from it about the announce such as firstName , lastName and price ..
     }
   }
-
+//it will update the number of views once upon click
   componentWillMount() {
     let id = window.location.pathname.split('/')[1]
     $.ajax({

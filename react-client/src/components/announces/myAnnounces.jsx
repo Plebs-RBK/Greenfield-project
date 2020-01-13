@@ -3,14 +3,17 @@ import $ from "jquery";
 import NavBar from '../nav.jsx';
 import Announces from './announces.jsx'
 
+//this component is responsible for displaying the list of announces
 class MyAnnounces extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: []  // we will loop through it to render and style the elements of it such as firstName , lastName and categories .
     }
     this.deleteAnnounce = this.deleteAnnounce.bind(this)
   }
+
+  //getting all the announces from the database
   componentDidMount() {
     const token = localStorage.getItem('token')
     $.ajax({
@@ -20,6 +23,8 @@ class MyAnnounces extends React.Component {
       .done(data => this.checkAndRenderData(data))
       .fail(err => this.setState({ fail: true }))
   }
+
+  //this allows the user to delete any announce he wants
   deleteAnnounce(e) {
     const token = localStorage.getItem('token')
     $.ajax({
@@ -31,6 +36,8 @@ class MyAnnounces extends React.Component {
       headers: { token }
     }).then(data => this.checkAndRenderData(data))
   }
+
+  //in case the user is not logged in .. this will redirect him to a page where it tells him to either create an account or login in order to check his announcements
   renderMsg() {
     return (
       <div>
@@ -50,6 +57,8 @@ class MyAnnounces extends React.Component {
       </div>
     )
   }
+
+
   checkAndRenderData(data) {
     if (data.length) return this.setState({ data })
   }

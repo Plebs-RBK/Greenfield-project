@@ -3,26 +3,29 @@ import $ from "jquery";
 import NavBar from '../nav.jsx';
 import { Redirect } from 'react-router-dom';
 
+//this component is responsible for the form that allows the user to create a new announce
 class Form extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       categories: ["", 'Math', 'Physics', 'It', 'Science', 'Philosophy', 'Geography'],
-      categorie: "",
-      region: "",
-      phone: "",
-      description: "",
-      price: ""
+      categorie: "",        //  gets the value of the categorie input so it can be saved in the database
+      region: "",           //  gets the value of the region input so it can be saved in the database
+      phone: "",            //  gets the value of the phone input so it can be saved in the database
+      description: "",      //  gets the value of the description input so it can be saved in the database
+      price: ""             //  gets the value of the price input so it can be saved in the database
     };
     this.onSubmit = this.onSubmit.bind(this);
     this.change = this.change.bind(this);
   }
 
+  //each element of the state will get the value of the input
   change(e) {
     document.querySelector('.error').style.display = "none";
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  //Once the user submit all infos will be sent and stored in the database
   onSubmit(e) {
     e.preventDefault();
     let token = localStorage.getItem('token')
@@ -40,6 +43,8 @@ class Form extends React.Component {
         .fail(err => this.setState({ fail: true }))
     };
   }
+
+  //In case the user want to post an announce without being connected . it will redirect him to another page where it tells him to login or sign up
   redirection() {
     return (
       <div>
@@ -51,6 +56,8 @@ class Form extends React.Component {
       </div>
     )
   }
+
+  //impose on the user the fact that he must fill the inputs
   validation() {
     for (let key in this.state) {
       if (this.state[key] === "" && key !== "description") return `${key} is required`
@@ -166,7 +173,7 @@ class Form extends React.Component {
               {this.state.fail && this.redirection()}
             </div>
           </main>
-      </div>     
+      </div>
     );
   }
 }

@@ -1,23 +1,24 @@
 import React, { Component } from "react";
 import NavBar from '../nav.jsx';
 
-
+//displaying the announce
 class Announces extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {}
 	}
 render() {
+//display rating as stars
    const elem = Math.floor(this.props.announce.rating);
     const stars = [];
     let count = 0;
-      for (let i =0; i < 5; i++) { 
+      for (let i =0; i < 5; i++) {
         if (count !== elem) {
-          stars.push(<span key={i} className="fa fa-star checked" style={{color: 'gold'}}></span>); 
+          stars.push(<span key={i} className="fa fa-star checked" style={{color: 'gold'}}></span>);
           count++;
         }else {
           stars.push(<span className="fa fa-star" style={{color: 'lightGray'}}></span>)
-        } 
+        }
       }
 
 		return (
@@ -54,7 +55,7 @@ render() {
 		            </h3>
 		            {stars}
 		            </div>
-		            </div>           
+		            </div>
 		            </main>
 		        </div>
 		      </div>
