@@ -8,6 +8,8 @@ import Form from "./components/announces/addForm.jsx";
 import { Route, Switch } from 'react-router-dom';
 import MyAnnounces from './components/announces/myAnnounces.jsx'
 
+//this component represent the different routes of our application
+
 const App = () => (
   <div>
     <Switch>

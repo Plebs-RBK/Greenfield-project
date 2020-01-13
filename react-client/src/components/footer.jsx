@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+//this component represents the footer of our home page
+
 const Footer = () => (
 <footer className="pv4 ph3 ph5-ns tc">
 <div className='flex justify-center'>
