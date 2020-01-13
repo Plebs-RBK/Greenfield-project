@@ -6,9 +6,13 @@ class Teacher extends React.Component {
     super(props)
     this.state = {}
   }
+  
+  //Toggler
   changeState(e) {
     this.setState({ clicked: true })
   }
+  
+  //Redirect the proper announce
   RenderTheComponant() {
     return <Redirect to={`/${this.props.data._id}`} />
   }
