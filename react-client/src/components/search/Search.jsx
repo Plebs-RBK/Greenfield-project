@@ -9,18 +9,26 @@ class Search extends Component {
       teachers: ['Math', 'Physics', 'It', 'Science', 'Philosophy', 'Geography']
     };
 
+  //Binding the helper function to this component
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   }
-
+  
+//==========Helper-Function==========\\
+  
+  // Toggles a this.state.found to be true
   onSubmit(event) {
     event.preventDefault();
     window.query = this.state.searchInput
     this.setState({ found: true })
   }
+  
+  // If this.state.found is true, Redirects to the /result page (route)
   goToResult() {
     return <Redirect to="/result" />
   }
+  
+  // Graps the value in the serarch imput
   onChange(event) {
     this.setState({ searchInput: event.target.value })
   }
